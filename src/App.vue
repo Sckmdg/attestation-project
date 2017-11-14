@@ -1,17 +1,27 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <HelloWorld/>
+    <ToDoList :items="items"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+import ToDoList from './components/ToDoList'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    ToDoList
+  },
+  data () {
+    return {
+      items: [
+        { name: 'Learn Angular' },
+        { name: 'Learn React' },
+        { name: 'Learn Vue' },
+        { name: 'Learn Node' }
+      ]
+    }
   }
 }
 </script>
