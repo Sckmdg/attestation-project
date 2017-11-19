@@ -30,11 +30,6 @@
           requred: true
         }
       }
-    },
-    data () {
-      return {
-
-      }
     }
   }
 </script>

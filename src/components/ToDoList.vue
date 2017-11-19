@@ -22,11 +22,6 @@
         default: 0,
         required: true
       }
-    },
-    data () {
-      return {
-
-      }
     }
   }
 </script>

@@ -2,7 +2,7 @@
   <div id="app">
     <img src="./assets/logo.png">
     <ToDoList :items="items"/>
-    <Editor />
+    <Editor :addTodo="addTodo" />
   </div>
 </template>
 
@@ -19,11 +19,16 @@ export default {
   data () {
     return {
       items: [
-        { name: 'Angular', status: true },
-        { name: 'React', status: true },
-        { name: 'Vue', status: true },
-        { name: 'Node', status: false }
+        { id: 0, name: 'Angular', status: true },
+        { id: 1, name: 'React', status: true },
+        { id: 2, name: 'Vue', status: true },
+        { id: 3, name: 'Node', status: false }
       ]
+    }
+  },
+  methods: {
+    addTodo: function () {
+      console.log(123123)
     }
   }
 }

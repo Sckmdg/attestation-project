@@ -2,18 +2,21 @@
   <div class="editor-container">
     <div>
       <label>Name:</label>
-      <input type="text">
+      <input
+        type="text"
+        v-model="name"
+      />
     </div>
 
     <div>
       <label>Status:</label>
-      <select>
+      <select v-model="status">
         <option>True</option>
         <option>False</option>
       </select>
     </div>
 
-    <button>Add</button>
+    <button v-on:click="addTodo">Add</button>
   </div>
 </template>
 
@@ -22,7 +25,14 @@
     name: 'Editor',
     data () {
       return {
-
+        name: '',
+        status: 'False'
+      }
+    },
+    props: {
+      addTodo: {
+        type: Function,
+        required: true
       }
     }
   }
