@@ -1,7 +1,7 @@
 <template>
   <li>
-    <span>{{ item.name }}</span>
-    <span class="checkbox">
+    <div>{{ item.name }}</div>
+    <div>
       <input
         type="checkbox"
         value="item.name"
@@ -10,7 +10,12 @@
         :checked="item.status"
       />
       <label for="item.name">Learned</label>
-    </span>
+    </div>
+    <div>
+    <button :click="deleteItem(item.id)">
+        Delete
+      </button>
+    </div>
   </li>
 </template>
 
@@ -21,6 +26,10 @@
       item: {
         type: Object,
         required: true,
+        id: {
+          type: Number,
+          requred: true
+        },
         name: {
           type: String,
           requred: true
@@ -30,17 +39,20 @@
           requred: true
         }
       }
+    },
+    methods: {
+      deleteItem: function (id) {
+        this.$parent.$parent.deleteItem(id)
+      }
     }
   }
 </script>
 
 <style scoped>
-  span {
-    max-width: 100px;
-  }
-
-  .checkbox {
-    float: right;
-    margin-right: 15px;
+  div {
+    float: left;
+    width: 33%;
+    height: 25px;
+    text-align: center;
   }
 </style>

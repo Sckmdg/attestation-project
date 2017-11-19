@@ -2,8 +2,8 @@
   <ul>
     <TodoItem
       v-for="(item, index) in items"
-      v-bind:item="item"
-      v-bind:key="index"
+      :item="item"
+      :key="index"
     />
   </ul>
 </template>
@@ -19,7 +19,6 @@
     props: {
       items: {
         type: Array,
-        default: 0,
         required: true
       }
     }
@@ -29,7 +28,7 @@
 <style scoped>
   ul {
     margin: 0 auto;
-    width: 225px;
+    width: 450px;
     padding: 0;
   }
   li {
