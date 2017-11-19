@@ -28,15 +28,15 @@
         required: true,
         id: {
           type: Number,
-          requred: true
+          required: true
         },
         name: {
           type: String,
-          requred: true
+          required: true
         },
         status: {
           type: Boolean,
-          requred: true
+          required: true
         }
       }
     },
