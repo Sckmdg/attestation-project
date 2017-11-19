@@ -1,14 +1,21 @@
 <template>
   <ul>
-    <li v-for="item in items">
-        {{ item.name }}
-    </li>
+    <TodoItem
+      v-for="(item, index) in items"
+      v-bind:item="item"
+      v-bind:key="index"
+    />
   </ul>
 </template>
 
 <script>
+  import TodoItem from './TodoItem'
+
   export default {
     name: 'ToDoList',
+    components: {
+      TodoItem
+    },
     props: {
       items: {
         type: Array,
@@ -27,7 +34,7 @@
 <style scoped>
   ul {
     margin: 0 auto;
-    width: 200px;
+    width: 225px;
     padding: 0;
   }
   li {
@@ -36,6 +43,8 @@
     line-height: 25px;
     border: 1px solid;
     border-bottom: 0;
+    text-align: left;
+    padding-left: 15px;
   }
 
   li:last-child {

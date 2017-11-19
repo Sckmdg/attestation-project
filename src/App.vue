@@ -16,10 +16,10 @@ export default {
   data () {
     return {
       items: [
-        { name: 'Learn Angular' },
-        { name: 'Learn React' },
-        { name: 'Learn Vue' },
-        { name: 'Learn Node' }
+        { name: 'Angular', status: true },
+        { name: 'React', status: true },
+        { name: 'Vue', status: true },
+        { name: 'Node', status: false }
       ]
     }
   }
