@@ -12,7 +12,7 @@
       <label for="item.name">Learned</label>
     </div>
     <div>
-    <button :click="deleteItem(item.id)">
+    <button v-on:click="deleteItem(item.id)">
         Delete
       </button>
     </div>

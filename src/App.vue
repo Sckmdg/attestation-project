@@ -32,7 +32,9 @@ export default {
       this.items.push({id: this.items.length, name: name, status: isStatus})
     },
     deleteItem: function (id) {
-
+      this.items = this.items.filter(el => {
+        return el.id !== id
+      })
     }
   }
 }
