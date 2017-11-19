@@ -12,7 +12,7 @@
       <label for="item.name">Learned</label>
     </div>
     <div>
-    <button v-on:click="deleteItem(item.id)">
+    <button @click="deleteItem(item.id)">
         Delete
       </button>
     </div>
@@ -41,7 +41,7 @@
       }
     },
     methods: {
-      deleteItem: function (id) {
+      deleteItem (id) {
         this.$parent.$parent.deleteItem(id)
       }
     }

@@ -16,7 +16,7 @@
       </select>
     </div>
 
-    <button v-on:click="sendTodo(name, status)">
+    <button @click="sendTodo(name, status)">
       Add
     </button>
   </div>
@@ -32,7 +32,7 @@
       }
     },
     methods: {
-      sendTodo: function (name, status) {
+      sendTodo (name, status) {
         if (name.length > 0) {
           this.$parent.addTodo(name, status)
           this.name = ''

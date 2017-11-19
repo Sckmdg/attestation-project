@@ -27,11 +27,11 @@ export default {
     }
   },
   methods: {
-    addTodo: function (name, status) {
+    addTodo (name, status) {
       const isStatus = (status === 'true')
       this.items.push({id: this.items.length, name: name, status: isStatus})
     },
-    deleteItem: function (id) {
+    deleteItem (id) {
       this.items = this.items.filter(el => {
         return el.id !== id
       })
