@@ -11,12 +11,14 @@
     <div>
       <label>Status:</label>
       <select v-model="status">
-        <option>True</option>
-        <option>False</option>
+        <option value="true">True</option>
+        <option value="false">False</option>
       </select>
     </div>
 
-    <button v-on:click="addTodo">Add</button>
+    <button v-on:click="validateForm(name, status)">
+      Add
+    </button>
   </div>
 </template>
 
@@ -26,13 +28,16 @@
     data () {
       return {
         name: '',
-        status: 'False'
+        status: false
       }
     },
-    props: {
-      addTodo: {
-        type: Function,
-        required: true
+    methods: {
+      validateForm: function (name, status) {
+        if (name.length > 0) {
+          this.$parent.addTodo(name, status)
+          this.name = ''
+          this.status = false
+        } else alert('Invalid name')
       }
     }
   }

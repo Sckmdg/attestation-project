@@ -2,7 +2,7 @@
   <div id="app">
     <img src="./assets/logo.png">
     <ToDoList :items="items"/>
-    <Editor :addTodo="addTodo" />
+    <Editor/>
   </div>
 </template>
 
@@ -27,8 +27,9 @@ export default {
     }
   },
   methods: {
-    addTodo: function () {
-      console.log(123123)
+    addTodo: function (name, status) {
+      const isStatus = (status === 'true')
+      this.items.push({id: this.items.length, name: name, status: isStatus})
     }
   }
 }
