@@ -1,5 +1,5 @@
 <template>
-  <ul>
+  <ul v-highlight>
     <TodoItem
       v-for="(item, index) in items"
       :item="item"
@@ -20,6 +20,13 @@
       items: {
         type: Array,
         required: true
+      }
+    },
+    directives: {
+      highlight: {
+        bind (el) {
+          el.style.fontWeight = 'bold'
+        }
       }
     }
   }
