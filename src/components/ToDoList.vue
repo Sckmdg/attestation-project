@@ -10,9 +10,11 @@
 
 <script>
   import TodoItem from './TodoItem'
+  import Hi from '../mixins/Hi'
 
   export default {
     name: 'ToDoList',
+    mixins: [Hi],
     components: {
       TodoItem
     },
